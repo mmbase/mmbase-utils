@@ -1,4 +1,10 @@
 # mmbase-utils
+
+[![Build Status](https://travis-ci.org/mmbase/mmbase-utils.svg?)](https://travis-ci.org/mmbase/mmbase-utils)
+[![snapshots](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.mmbase/mmbase-utils.svg)](https://oss.sonatype.org/content/repositories/staging/org/mmbase/)
+[![Maven Central](https://img.shields.io/maven-central/v/org.mmbase/mmbase-utils.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.mmbase%22)
+
+
 <p>
 MMBase Utils is a part of MMBase, but can also be used in
 other projects. It contains several kind of utility
