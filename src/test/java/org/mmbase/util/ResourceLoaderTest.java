@@ -10,15 +10,18 @@ See http://www.MMBase.org/license
 package org.mmbase.util;
 
 
+import java.io.File;
 import java.net.URL;
-import java.util.*;
-import java.io.*;
-import org.springframework.mock.web.*;
-import org.springframework.core.io.*;
+import java.util.List;
+import java.util.Set;
 
+import javax.servlet.ServletContext;
 
-import org.junit.*;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+
 /**
  * Test the working of the ResourceLoader.
  *
@@ -97,11 +100,8 @@ public class ResourceLoaderTest {
     }
     @Test
     public void servletContext() throws Exception {
-        FileSystemResourceLoader files = new FileSystemResourceLoader();
-        System.out.println("files " + files);
-        MockServletContext sx = new MockServletContext(files);
-        System.out.println("sx " + sx.getResourcePaths("/"));
 
+        ServletContext sx = mock(ServletContext.class);
         ResourceLoader.init(sx);
         ResourceLoader webRoot = ResourceLoader.getWebRoot();
         ResourceLoader child = webRoot.getChildResourceLoader("src/test/files");

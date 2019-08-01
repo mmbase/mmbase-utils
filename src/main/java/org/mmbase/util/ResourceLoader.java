@@ -548,7 +548,7 @@ public class ResourceLoader extends ClassLoader {
 
             @Override
                 public boolean hasMoreElements() {
-                    return current.hasMoreElements() || next.hasMoreElements();
+                    return current != null && (current.hasMoreElements() || next.hasMoreElements());
                 }
             @Override
                 public URL nextElement() {

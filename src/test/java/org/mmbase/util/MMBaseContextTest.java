@@ -10,10 +10,12 @@
 
 package org.mmbase.util;
 
-import org.junit.*;
-import org.springframework.mock.web.*;
-import org.springframework.core.io.*;
 import javax.servlet.ServletContext;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import static org.mockito.Mockito.mock;
 
 
 /**
@@ -26,12 +28,7 @@ public class MMBaseContextTest  {
 
     @BeforeClass
     public static void setup() throws Exception {
-        ServletContext sx = new MockServletContext("/src/test/files/",  new FileSystemResourceLoader()) {
-                @Override
-                public ServletContext getContext(String uriPath) {
-                    return this;
-                }
-            };
+        ServletContext sx = mock(ServletContext.class);
         MMBaseContext.init(sx);
     }
 
