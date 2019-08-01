@@ -9,12 +9,23 @@ See http://www.MMBase.org/license
 */
 package org.mmbase.util;
 
-import java.util.*;
-import java.io.*;
-import javax.servlet.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
-import org.mmbase.core.event.*;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.ServletException;
+
+import org.mmbase.core.event.EventManager;
+import org.mmbase.core.event.SystemEvent;
+import org.mmbase.core.event.SystemEventListener;
 import org.mmbase.util.logging.Logger;
 import org.mmbase.util.logging.Logging;
 

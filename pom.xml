@@ -10,23 +10,9 @@ See http://www.MMBase.org/license
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!--
-      This pom is responsible for building the mmbase jar, and perhaps the maven site.
-
-      The example war can be build with example-webapp/pom.xml
-
-
-  -->
-
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.mmbase</groupId>
-    <artifactId>mmbase-parent</artifactId>
-    <version>2.0-SNAPSHOT</version>
-    <relativePath>../maven-base/pom.xml</relativePath>
-  </parent>
-
+  <groupId>org.mmbase</groupId>
   <artifactId>mmbase-utils</artifactId>
   <name>MMBase2 Utils</name>
   <description><![CDATA[<p>
@@ -144,16 +130,19 @@ classes.</p>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
+        <version>1.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
+      <version>1.4</version>
     </dependency>
     <dependency>
       <!-- this is actually a depdency of commons-fileupload
@@ -161,22 +150,26 @@ classes.</p>
       -->
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
+      <version>2.6</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>javax.servlet</groupId>
+      <groupId>javax.servlet.jsp.jstl</groupId>
       <artifactId>jstl</artifactId>
+      <version>1.2</version>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>com.yahoo.platform.yui</groupId>
       <artifactId>yuicompressor</artifactId>
-      <version>2.4.2</version>
+      <version>2.4.8</version>
       <scope>provided</scope>
     </dependency>
 
@@ -184,38 +177,10 @@ classes.</p>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>4.12</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-    </dependency>
-
   </dependencies>
 
-  <reporting>
-    <plugins>
-      <!--
-      <plugin>
-        <artifactId>maven-changelog-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>taglist-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>javacc-maven-plugin</artifactId>
-      </plugin>
-      -->
-    </plugins>
-  </reporting>
 
   <!--
        If your local repository is still empty, and still want to start with this pom
@@ -254,7 +219,7 @@ classes.</p>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${javadoc.plugin.version}</version>
+            <version>3.1.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
