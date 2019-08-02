@@ -1,8 +1,12 @@
 language: java
 jdk:
-  - openjdk8
-
+- openjdk8
 script: mvn --fail-never -T 1C -Pdeploy clean test deploy --settings .travis-settings.xml
   -Dgpg.skip=true
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+    - secure: mm6WWWdIPGOWk680P1DGpDOAiVLQZ/h0iU771fTCpq8I9cxwyIVyTE24InxRMdrFNIuzb4G3lyhhJe0ZPJNtBbgSPiQw7/81alsuyvmTCGFGyv6tgjj14Xgj8DqYX+LEPRESzr/R6lRfYuK8ookVUOWBXGhDlkbTCKfjAJed8VpURXSFcq6GqhFZ+BhoB00hD/OGiNmQwmhLmalTntuW7bIuNSF/rw/aEaL97HJfhl4GNqeRkw+wkyNu1uvOTmFGYZ5C1zWi6kLLSAIE5ZGuvUPfgT96zErojYertUO+L6r8btTNHtg3D3XlTjMSYoHR5SgpElfmrNlQP9qt8FvcDJ7lCmMs9PKiwEBQcHm3lmzYwZm5o9PlEL5aTQ0qNRBVu+1oGy8FZK2DxrvV5W4V191YnXFQB9vMG6EYW47p0gpUlSkIEQNsHXI0LY5CzoPlw3IUZefXQxGEojocjOpXZTBIsXhoXuvdMMb9UNVIVH1+btDl62JI07AW+Tc8He5s49X5QpMPPhikk3uqbMsbFJRb3O/cn84/5zpvUSi/o+gNE68XaNuObm5fd3A7gwievZSzS0eW7pw2XXKP9IX+TA9Sx1IdoRpzHGEMuOhlfIpJvwqV4s7bE1BrhTrKhrvG+oCRY/GkF8ZGUn0Cddpa8M1wU4RNLqz6juhcGpxlj+Y=
+    - SONATYPE_USER=mihxil
