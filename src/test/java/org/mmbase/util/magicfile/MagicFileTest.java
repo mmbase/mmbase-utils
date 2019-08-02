@@ -8,13 +8,20 @@ See http://www.MMBase.org/license
 
 */
 package org.mmbase.util.magicfile;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.mmbase.util.IOUtil;
-import java.util.*;
-import java.io.*;
-import org.junit.*;
-import org.junit.runner.*;
-import org.junit.runners.*;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -51,7 +58,7 @@ public class MagicFileTest  {
 
         List<Object[]> data = new ArrayList<Object[]>();
         for (Object[] file : files) {
-            File f = new File(dir, (String) file[0]);
+            File f = new File(MagicFile.class.getResource("/files/" + file[0]).getFile());
             data.add(new Object[] { f, file[1] });
         }
         return data;
