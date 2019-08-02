@@ -11,6 +11,8 @@ See http://www.MMBase.org/license
 package org.mmbase.util;
 
 import java.io.*;
+import java.util.UUID;
+
 import org.mmbase.util.logging.*;
 import org.mmbase.util.magicfile.MagicFile;
 import org.apache.commons.fileupload.FileItem;
@@ -120,7 +122,7 @@ public class SerializableInputStream  extends InputStream implements Serializabl
         this.size = fi.getSize();
         this.name = fi.getName();
         this.contentType = new MimeType(fi.getContentType());
-        file = File.createTempFile(getClass().getName(), this.name);
+        file = new File(System.getProperty("java.io.tmpdir"), getClass().getName() + UUID.randomUUID() + this.name);
         file.deleteOnExit();
         try {
             fi.write(file);
