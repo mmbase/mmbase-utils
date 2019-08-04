@@ -36,6 +36,145 @@ classes.</p>
 ]]></description>
 
   <version>2.0-SNAPSHOT</version>
+  <url>https://github.com/mmbase/mmbase-utils</url>
+
+  <developers>
+    <developer>
+      <id>0</id>
+      <name>Andre van Toly</name>
+      <email>andre@toly.nl</email>
+      <roles>
+        <role>Webmaster</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>1</id>
+      <name>Daniel Ockeloen</name>
+      <email>daniel@submarine.nl</email>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>2</id>
+      <name>Eduard Witteveen</name>
+      <email>eywitteveen@gmail.com</email>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>ernst</id>
+      <name>Ernst Bunders</name>
+      <email>ernst@dynasol.nl</email>
+      <url>http://www.dynasol.nl</url>
+      <organization>Dynasol</organization>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>4</id>
+      <name>Gerard van Enk</name>
+      <email>gvenk@xs4all.nl</email>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>5</id>
+      <name>Jaco de Groot</name>
+      <email>jaco@dynasol.nl</email>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>johannes</id>
+      <name>Johannes Verelst</name>
+      <email>jverelst@gmail.com</email>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>keesj</id>
+      <name>Kees Jongenburger</name>
+      <email>keesj@dds.nl</email>
+      <organization>Exmachina</organization>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>7</id>
+      <name>Marcel Maatkamp</name>
+      <email>M.Maatkamp@vpro.nl</email>
+      <organization>Vpro</organization>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>8</id>
+      <name>Mark Huijser</name>
+      <email>mark.huijser@eo.nl</email>
+      <organization>EO</organization>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>michiel</id>
+      <name>Michiel Meeuwissen</name>
+      <email>Michiel.Meeuwissen@dynasol.nl</email>
+      <url>http://www.dynasol.nl</url>
+      <organization>Dynasol</organization>
+      <roles>
+        <role>Release Manager</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>nklasens</id>
+      <name>Nico Klasens</name>
+      <email>mmbase@klasens.net</email>
+      <url>http://www.finalist.com</url>
+      <organization>Finalist IT Group</organization>
+      <roles>
+        <role>Source monitor</role>
+        <role>Patch manager</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>pierre</id>
+      <name>Pierre van Rooden</name>
+      <email>Pierre.van.Rooden@omroep.nl</email>
+      <organization>Publieke Omroep</organization>
+      <roles>
+        <role>Vote manager</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>11</id>
+      <name>Rico Jansen</name>
+      <email>R.Jansen@vpro.nl</email>
+      <organization>Vpro</organization>
+      <roles>
+        <role>Hosting</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>12</id>
+      <name>Rob van Maris</name>
+      <email>robvanmaris@xs4all.nl</email>
+      <roles>
+        <role>Project coordination</role>
+        <role>Meeting coordination</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>13</id>
+      <name>Rob Vermeulen</name>
+      <email>r.vermeulen@vpro.nl</email>
+      <organization>Vpro</organization>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <name>Sander de Boer</name>
+      <id>sdboer</id>
+      <organization>EO</organization>
+      <timezone>1</timezone>
+    </developer>
+  </developers>
+
 
 
   <licenses>
