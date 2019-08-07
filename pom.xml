@@ -10,9 +10,13 @@ See http://www.MMBase.org/license
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.mmbase</groupId>
+  <parent>
+    <groupId>org.mmbase</groupId>
+    <artifactId>mmbase-parent</artifactId>
+    <version>2.0.0</version>
+  </parent>
   <artifactId>mmbase-utils</artifactId>
+
   <name>MMBase2 Utils</name>
   <description><![CDATA[<p>
 MMBase Utils is a part of MMBase, but can also be used in
@@ -37,155 +41,10 @@ classes.</p>
   <version>2.0.1-SNAPSHOT</version>
   <url>https://github.com/mmbase/mmbase-utils</url>
 
-  <developers>
-    <developer>
-      <id>0</id>
-      <name>Andre van Toly</name>
-      <email>andre@toly.nl</email>
-      <roles>
-        <role>Webmaster</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>1</id>
-      <name>Daniel Ockeloen</name>
-      <email>daniel@submarine.nl</email>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>2</id>
-      <name>Eduard Witteveen</name>
-      <email>eywitteveen@gmail.com</email>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>ernst</id>
-      <name>Ernst Bunders</name>
-      <email>ernst@dynasol.nl</email>
-      <url>http://www.dynasol.nl</url>
-      <organization>Dynasol</organization>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>4</id>
-      <name>Gerard van Enk</name>
-      <email>gvenk@xs4all.nl</email>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>5</id>
-      <name>Jaco de Groot</name>
-      <email>jaco@dynasol.nl</email>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>johannes</id>
-      <name>Johannes Verelst</name>
-      <email>jverelst@gmail.com</email>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>keesj</id>
-      <name>Kees Jongenburger</name>
-      <email>keesj@dds.nl</email>
-      <organization>Exmachina</organization>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>7</id>
-      <name>Marcel Maatkamp</name>
-      <email>M.Maatkamp@vpro.nl</email>
-      <organization>Vpro</organization>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>8</id>
-      <name>Mark Huijser</name>
-      <email>mark.huijser@eo.nl</email>
-      <organization>EO</organization>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>michiel</id>
-      <name>Michiel Meeuwissen</name>
-      <email>Michiel.Meeuwissen@dynasol.nl</email>
-      <url>http://www.dynasol.nl</url>
-      <organization>Dynasol</organization>
-      <roles>
-        <role>Release Manager</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>nklasens</id>
-      <name>Nico Klasens</name>
-      <email>mmbase@klasens.net</email>
-      <url>http://www.finalist.com</url>
-      <organization>Finalist IT Group</organization>
-      <roles>
-        <role>Source monitor</role>
-        <role>Patch manager</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>pierre</id>
-      <name>Pierre van Rooden</name>
-      <email>Pierre.van.Rooden@omroep.nl</email>
-      <organization>Publieke Omroep</organization>
-      <roles>
-        <role>Vote manager</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>11</id>
-      <name>Rico Jansen</name>
-      <email>R.Jansen@vpro.nl</email>
-      <organization>Vpro</organization>
-      <roles>
-        <role>Hosting</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>12</id>
-      <name>Rob van Maris</name>
-      <email>robvanmaris@xs4all.nl</email>
-      <roles>
-        <role>Project coordination</role>
-        <role>Meeting coordination</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <id>13</id>
-      <name>Rob Vermeulen</name>
-      <email>r.vermeulen@vpro.nl</email>
-      <organization>Vpro</organization>
-      <timezone>1</timezone>
-    </developer>
-    <developer>
-      <name>Sander de Boer</name>
-      <id>sdboer</id>
-      <organization>EO</organization>
-      <timezone>1</timezone>
-    </developer>
-  </developers>
-
-
-
-  <licenses>
-    <license>
-      <name>Mozilla 2.0</name>
-      <url>https://www.mozilla.org/en-US/MPL/2.0/</url>
-    </license>
-  </licenses>
 
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/mmbase/mmbase-maven-plugin</url>
+    <url>https://travis-ci.org/mmbase/mmbase-utils</url>
   </ciManagement>
   <scm>
     <connection>scm:git:git://git@github.com/mmbase/mmbase-utils.git</connection>
@@ -281,7 +140,7 @@ classes.</p>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
-        <version>1.1</version>
+      <version>1.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -331,83 +190,7 @@ classes.</p>
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>deploy</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>mmbase-ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.1.0</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.1</version>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <doclint>none</doclint>
-              <failOnError>false</failOnError>
-              <notimestamp>true</notimestamp>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>mmbase-ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>mmbase-ossrh-release</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
 
 </project>
