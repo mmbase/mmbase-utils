@@ -9,14 +9,15 @@ See http://www.MMBase.org/license
 */
 package org.mmbase.servlet;
 
-import java.io.*;
-import java.util.*;
+import org.mmbase.util.FileWatcher;
+import org.mmbase.util.logging.Logger;
+import org.mmbase.util.logging.Logging;
 
 import javax.servlet.*;
-import javax.servlet.http.*;
-
-import org.mmbase.util.*;
-import org.mmbase.util.logging.*;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
+import java.io.*;
+import java.util.Properties;
 
 /**
  * Makes sure that there is no charset on the content type of certain
@@ -36,7 +37,7 @@ public class CharsetRemoverFilter implements Filter {
     private static final Logger log = Logging.getLoggerInstance(CharsetRemoverFilter.class);
 
 
-    Properties contentTypes = new Properties();    
+    Properties contentTypes = new Properties();
     FileWatcher watcher = new FileWatcher(true) {
             public void onChange(File file) {
                 load(file);
@@ -45,6 +46,7 @@ public class CharsetRemoverFilter implements Filter {
     /**
      * Initializes the filter
      */
+    @Override
     public void init(javax.servlet.FilterConfig filterConfig) throws ServletException {
         File file = new File(filterConfig.getServletContext().getRealPath("WEB-INF/config/charsetremover.properties"));
         log.info("Init of CharsetRemover Filter, using " + file);
@@ -76,79 +78,81 @@ public class CharsetRemoverFilter implements Filter {
     }
 
 
-    public void doFilter(final ServletRequest servletRequest, final ServletResponse servletResponse, FilterChain filterChain) 
+    @Override
+    public void doFilter(final ServletRequest servletRequest, final ServletResponse servletResponse, FilterChain filterChain)
         throws java.io.IOException, ServletException {
 
         HttpServletResponseWrapper wrapper = new HttpServletResponseWrapper((HttpServletResponse) servletResponse) {
-                private String contentType;
-                private PrintWriter writer = null;
+            private String contentType;
+            private PrintWriter writer = null;
 
             @Override
-                public void setContentType(String ct) {
-                    contentType = ct;
-                    if (log.isDebugEnabled()) {
-                        log.trace("Setting contentType to " + ct + " " + Logging.stackTrace(new Exception()));
-                    }
-                    getResponse().setContentType(ct);                    
+            public void setContentType(String ct) {
+                contentType = ct;
+                if (log.isDebugEnabled()) {
+                    log.trace("Setting contentType to " + ct + " " + Logging.stackTrace(new Exception()));
                 }
+                getResponse().setContentType(ct);
+            }
             @Override
-                public String getContentType() {
-                    return contentType;
-                }
-                /**
-                 * This is the essence of this whole thing. The idea
-                 * is to fake the use of getOutputStream(). Then you
-                 * are in byte-writing mode.  and charset's become
-                 * irrelevant,and tomcat will not add one any more.
-                 */
-                
+            public String getContentType() {
+                return contentType;
+            }
+            /**
+             * This is the essence of this whole thing. The idea
+             * is to fake the use of getOutputStream(). Then you
+             * are in byte-writing mode.  and charset's become
+             * irrelevant,and tomcat will not add one any more.
+             */
+
             @Override
-                public PrintWriter getWriter() throws IOException {
-                    if (writer == null) {                        
-                        String charSet = contentType == null ? null : (String) contentTypes.get(contentType);
-                        if (charSet != null) {
-                            if (contentType != null) {                                
-                                super.setContentType(contentType);                            
-                            }
-                            if (log.isDebugEnabled()) {
-                                log.debug("Wrapping outputstream to avoid charset " + charSet);
-                            }
-                            try {
-                                writer = new PrintWriter(new OutputStreamWriter(getOutputStream(), charSet), false) {
-                                        @Override
-                                        public void write(String s, int off, int len) {
-                                            super.write(s, off, len);
-                                            flush();
-                                        }
+            public PrintWriter getWriter() throws IOException {
+                if (writer == null) {
+                    String charSet = contentType == null ? null : (String) contentTypes.get(contentType);
+                    if (charSet != null) {
+                        if (contentType != null) {
+                            super.setContentType(contentType);
+                        }
+                        if (log.isDebugEnabled()) {
+                            log.debug("Wrapping outputstream to avoid charset " + charSet);
+                        }
+                        try {
+                            writer = new PrintWriter(new OutputStreamWriter(getOutputStream(), charSet), false) {
+                                @Override
+                                public void write(String s, int off, int len) {
+                                    super.write(s, off, len);
+                                    flush();
+                                }
 
-                                    };
-                            } catch (UnsupportedEncodingException uee) {
-                                log.error(uee);
-                                writer = super.getWriter();
-                            }
-                        } else {
-                            if (contentType != null) {
-                                super.setContentType(contentType);
-                            }
-
-                            if (log.isDebugEnabled()) {
-                                log.debug(" " + contentType + " is not contained by " + contentTypes);
-                            }
+                            };
+                        } catch (UnsupportedEncodingException uee) {
+                            log.error(uee);
                             writer = super.getWriter();
                         }
+                    } else {
+                        if (contentType != null) {
+                            super.setContentType(contentType);
+                        }
+
+                        if (log.isDebugEnabled()) {
+                            log.debug(" " + contentType + " is not contained by " + contentTypes);
+                        }
+                        writer = super.getWriter();
                     }
-                    if (log.isDebugEnabled()) {
-                        log.debug("Returning " + writer.getClass());
-                    }
-                    return writer;                        
                 }
+                if (log.isDebugEnabled()) {
+                    log.debug("Returning " + writer.getClass());
+                }
+                return writer;
+            }
         };
         filterChain.doFilter(servletRequest, wrapper);
-        
+
     }
     /**
      * destroys the filter
      */
+    @Override
     public void destroy() {
     }
 

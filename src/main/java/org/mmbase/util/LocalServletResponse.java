@@ -80,6 +80,8 @@ public class LocalServletResponse implements ServletResponse {
     @Override
     public ServletOutputStream  getOutputStream() {
         return new ServletOutputStream() {
+
+
             @Override
             public void write(int b) throws IOException {
                 output.write(b);
