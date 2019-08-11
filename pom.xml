@@ -111,7 +111,6 @@ classes.</p>
       <plugin>
         <groupId>org.mmbase.maven</groupId>
         <artifactId>mmbase-maven-plugin</artifactId>
-        <version>2.0.1</version>
         <executions>
           <execution>
             <id>create-index-files</id>
