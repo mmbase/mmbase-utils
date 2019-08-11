@@ -16,7 +16,7 @@ See http://www.MMBase.org/license
     <version>2.0.1</version>
   </parent>
   <artifactId>mmbase-utils</artifactId>
-
+  <version>2.0.1-SNAPSHOT</version>
   <name>MMBase2 Utils</name>
   <description><![CDATA[<p>
 MMBase Utils is a part of MMBase, but can also be used in
@@ -38,7 +38,7 @@ classes.</p>
 </ul>
 ]]></description>
 
-  <version>2.0.1-SNAPSHOT</version>
+
   <url>https://github.com/mmbase/mmbase-utils</url>
 
 
