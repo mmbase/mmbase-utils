@@ -75,6 +75,7 @@ classes.</p>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
           <archive>
+            <index>true</index>
             <manifest>
               <addClasspath>true</addClasspath>
               <mainClass>org.mmbase.Version</mainClass>
@@ -82,21 +83,23 @@ classes.</p>
             <manifestEntries>
               <url>${project.url}</url>
             </manifestEntries>
-            <manifestSections>
+           <!-- <manifestSections>
               <manifestSection>
-                <name>org/mmbase</name>
+                <name>org/mmbase/utils/</name>
                 <manifestEntries>
                   <Vendor>MMBase Community</Vendor>
                   <URL>http://www.mmbase.org</URL>
                   <Comment>The MMBase Content Management System. ${project.name} (${project.artifactId}).</Comment>
-                  <Version>${project.version}.${timestamp}</Version>
+                  <Version>${project.version}.${maven.build.timestamp}</Version>
+                  &lt;!&ndash;
                   <SCM-Revision>${sources.version}</SCM-Revision>
+                  &ndash;&gt;
                   <Distribution>${project.version}</Distribution>
-                  <Build-Date>${timestamp}</Build-Date>
+                  <Build-Date>${maven.build.timestamp}</Build-Date>
                   <Description>${project.description}</Description>
                 </manifestEntries>
               </manifestSection>
-            </manifestSections>
+            </manifestSections>-->
           </archive>
         </configuration>
         <executions>
@@ -111,20 +114,6 @@ classes.</p>
       <plugin>
         <groupId>org.mmbase.maven</groupId>
         <artifactId>mmbase-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>create-index-files</id>
-            <goals>
-              <goal>create-index-files</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>copy-web-resources</id>
-            <goals>
-              <goal>install-resources</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -144,14 +133,6 @@ classes.</p>
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-    </dependency>
-    <dependency>
-      <!-- this is actually a depdency of commons-fileupload
-           which for some reason we have to maintain manually nowadays.
-      -->
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.6</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -176,12 +157,10 @@ classes.</p>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>2.28.2</version>
     </dependency>
   </dependencies>
   <repositories>
