@@ -146,7 +146,6 @@ classes.</p>
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-      <version>1.4</version>
     </dependency>
     <dependency>
       <!-- this is actually a depdency of commons-fileupload
@@ -159,7 +158,6 @@ classes.</p>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
       <scope>provided</scope>
     </dependency>
 
