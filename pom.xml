@@ -185,6 +185,17 @@ classes.</p>
       <version>2.28.2</version>
     </dependency>
   </dependencies>
-
+  <repositories>
+    <repository>
+      <id>mmbase-ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
 </project>
