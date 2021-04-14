@@ -4,6 +4,8 @@ image:https://github.com/mmbase/mmbase-utils/workflows/build/badge.svg?[Build St
 image:https://img.shields.io/nexus/s/https/oss.sonatype.org/org.mmbase/mmbase-utils.svg[snapshots,link=https://oss.sonatype.org/content/repositories/staging/org/mmbase/]
 image:https://img.shields.io/maven-central/v/org.mmbase/mmbase-utils.svg?label=Maven%20Central[Maven Central,link=https://search.maven.org/search?q=g:%22org.mmbase%22]
 image:http://www.javadoc.io/badge/org.mmbase/mmbase-utils.svg?color=blue[javadoc,link=http://www.javadoc.io/doc/org.mmbase/mmbase-utils]
+image:https://codecov.io/gh/mmbase/mmbase-utils/branch/master/graph/badge.svg[codecov,link=https://codecov.io/gh/mmbase/mmbase-utils]
+
 
 
 MMBase Utils is a part of MMBase, but can also be used in
