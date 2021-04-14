@@ -143,8 +143,6 @@ public class ExtendedProperties extends Properties {
      * @exception IOException Error when reading from input stream.
      */
     public final synchronized void load(InputStream in) throws IOException {
-        in = Runtime.getRuntime().getLocalizedInputStream(in);
-
         int ch = in.read();
         while (ch != -1) {
             switch (ch) {
