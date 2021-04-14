@@ -1,0 +1,29 @@
+= mmbase-utils
+
+image:https://github.com/mmbase/mmbase-utils/workflows/build/badge.svg?[Build Status,link=https://github.com/mmbase/mmbase-utils/actions?query=workflow%3Abuild]
+image:https://img.shields.io/nexus/s/https/oss.sonatype.org/org.mmbase/mmbase-utils.svg[snapshots,link=https://oss.sonatype.org/content/repositories/staging/org/mmbase/]
+image:https://img.shields.io/maven-central/v/org.mmbase/mmbase-utils.svg?label=Maven%20Central[Maven Central,link=https://search.maven.org/search?q=g:%22org.mmbase%22]
+
+MMBase Utils is a part of MMBase, but can also be used in
+other projects. It contains several kind of utility
+classes.
+
+Highlights:
+
+* An implementation of 'events'. Threads can use this to
+ communicate certain things. Using mmbase-clustering,
+ these events can also be sent to other servers.
+
+* A logging framework
+
+* A framework for string and byte array transformeration,
+ plus a whole lot of implemetentations for that.
+
+* Several java.util like classes (collections, dateparsing)
+
+* File type recognition ('magicfile')
+
+* The MMBase resourceloader, a generic fall-back mechanism
+ for configuration files and similar resources.
+
+* …
